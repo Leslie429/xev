@@ -1,0 +1,24 @@
+{# templates/promotion/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Promotions{% endblock %}
+
+{% block body %}
+    <h1>Nos Promotions</h1>
+    
+    {% if promotions is not empty %}
+        <div class="promotions-list">
+            {% for promotion in promotions %}
+                <div class="promotion-item">
+                    <img src="{{ asset('uploads/images/' ~promotion.Image) }}" alt="{{ promotion.NomProd }}">
+                    <h2>{{ promotion.NomProd }}</h2>
+                    <p>{{ promotion.Description }}</p>
+                    <p><strong>{{ promotion.PourcReduc }}% de réduction</strong></p>
+                    <p>Du {{ promotion.DateDeb|date('d/m/Y') }} au {{ promotion.DateFin|date('d/m/Y') }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Aucune promotion en cours.</p>
+    {% endif %}
+{% endblock %}

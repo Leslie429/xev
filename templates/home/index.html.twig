@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bienvenue sur XEVORIX</h1>
+    <section class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ asset('uploads/images/slide1.jpeg') }}" alt="Promo 1">
+                    <div class="slider-text">
+                        <h2>Obtenez le meilleur appareil</h2>
+                        <p>Au prix le plus bas !</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('uploads/images/slide2.jpeg') }}" alt="Promo 2">
+                    <div class="slider-text">
+                        <h2>Derniers gadgets à prix réduit</h2>
+                        <p>Offres limitées, ne manquez pas votre chance !</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('uploads/images/slide3.jpeg') }}" alt="Promo 3">
+                    <div class="slider-text">
+                        <h2>Des offres incroyables</h2>
+                        <p>Sur les appareils électroniques !</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination et flèches -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <section class="best-offers">
+        <h2>Nos Meilleures Offres</h2>
+        <div class="offers-grid">
+            {% for produit in bestOffers %}
+                <div class="offer-item">
+                    <img src="{{ asset('uploads/images/' ~ produit.ImgProd) }}" alt="{{ produit.nom }}">
+                    <div class="overlay">
+                        <p>{{ produit.nom }}</p>
+                        <span>{{ produit.prix }} €</span>
+                        <a href="{{ path('produit_show', { 'id': produit.id }) }}" class="details-btn">Détails</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="promotions">
+        <h2>Promotions</h2>
+        <div class="promo-grid">
+            {% for promo in promotions %}
+                <div class="promo-item">
+                    <img src="{{ asset('uploads/images/' ~ promo.image) }}" alt="{{ promo.description }}">
+                    <p>{{ promo.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <section class="reviews">
+        <h2>Ce que disent nos clients</h2>
+        <div class="swiper reviews-swiper">
+            <div class="swiper-wrapper">
+                {% for avis in avisList %}
+                    <div class="avis">
+                        <p>{{ avis.commentaire }}</p>
+                        <div class="stars">
+                            {% for i in 1..5 %}
+                                {% if i <= avis.note %}
+                                    <span class="star filled">★</span>
+                                {% else %}
+                                    <span class="star">☆</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-items">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>+229 XX XX XX XX</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@xevorix.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Cotonou, Bénin</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

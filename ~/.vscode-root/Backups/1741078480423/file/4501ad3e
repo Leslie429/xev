@@ -1,0 +1,5 @@
+file:///etc/apt/sources.list.d/third-party.sources.save.1 {"mtime":1740992791785,"ctime":1740992791785,"size":131,"etag":"3dqq941pe47","orphaned":false,"typeId":""}
+Types: deb
+URIs: cdrom:[Ubuntu 22.04 LTS _Jammy Jellyfish_ - Release amd64 (20220419)]/
+Suites: jammy
+Components: main restricted

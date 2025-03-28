@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ produit.nom }} - Détails{% endblock %}
+
+{% block body %}
+    <h1>{{ produit.nom }}</h1>
+    
+    <div class="product-detail">
+        <img src="{{ asset('uploads/images/' ~ produit.imgProd) }}" alt="{{ produit.nom }}" width="300">
+        <p><strong>Description :</strong> {{ produit.desription }}</p>
+        <p><strong>Prix :</strong> {{ produit.prix }} €</p>
+        <p><strong>Marque :</strong> {{ produit.marque }}</p>
+        <p><strong>Stock :</strong> {{ produit.stock }}</p>
+        <p><strong>Ajouté le :</strong> {{ produit.createdAt|date('d/m/Y') }}</p>
+
+        <a href="{{ path('produit_index') }}">Retour à la liste</a>
+    </div>
+{% endblock %}

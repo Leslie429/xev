@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+<h1>Statistiques</h1>
+
+<p>Ventes Totales : {{ productsSold }}</p>
+
+<h2>Produits les Plus Populaires</h2>
+<ul>
+    {% for product in topSellingProducts %}
+        <li>{{ product }}</li>
+    {% endfor %}
+</ul>

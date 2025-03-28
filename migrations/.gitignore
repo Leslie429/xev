@@ -1,0 +1,9 @@
+# Fichiers Symfony à ignorer
+/var/
+/vendor/
+/.env
+/.idea/
+/node_modules/
+/public/build/
+/public/uploads/
+echo ".vscode-root/" >> .gitignore

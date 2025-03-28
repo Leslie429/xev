@@ -1,0 +1,11 @@
+2025-03-04 09:54:41.939 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vscode.vscode-selfhost-test-provider' wants API proposal 'attributableCoverage' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-03-04 09:54:41.954 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-03-04 09:54:41.954 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.debugpy' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-03-04 09:54:41.955 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'redhat.java' wants API proposal 'documentPaste' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-03-04 09:54:42.687 [info] Started local extension host with pid 19595.
+2025-03-04 09:54:42.849 [info] Started initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2025-03-04 09:54:45.802 [warning] Failed to create default profile extensions manifest in extensions installation folder. file:///root/.vscode/extensions Unable to create file 'vscode-userdata:/root/.vscode/extensions/extensions.json' that already exists when overwrite flag is not set
+2025-03-04 09:54:45.803 [info] Completed initializing default profile extensions in extensions installation folder. file:///root/.vscode/extensions
+2025-03-04 09:54:46.956 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-03-04 09:54:47.517 [info] [perf] Render performance baseline is 65ms
+2025-03-04 10:11:04.387 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted

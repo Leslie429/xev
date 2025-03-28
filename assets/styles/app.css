@@ -1,3 +1,453 @@
+
+/* styles.css */
+
+/* Optionnel : ajouter un effet au survol des liens */
+.nav-links a:hover {
+    color: #ffffff; /* Change la couleur du texte au survol */
+}
+
+
+/* HEADER */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(3, 43, 77);
+    text-decoration: none;
+}
+
+
+/* Effect scroll (changer la couleur de fond) */
+.header.scrolled {
+    background-color: #000;
+}
+
+
+/* RESPONSIVE 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #222;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a {
+        padding: 10px;
+        display: block;
+    }
+    .burger-menu {
+        display: block;
+    }
+}*/
+
 body {
-    background-color: skyblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* SLIDER */
+
+
+/* BEST OFFERS */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.offer-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-item img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(1, 25, 56, 0.603);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.details-btn {
+    background: #012f49;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/*Avis*/
+.star {
+    font-size: 20px;
+    color: gray;
+}
+.filled {
+    color: gold;
+}
+
+
+/* PROMOTION*/
+/* Conteneur principal des promotions */
+.promotions {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.promotions h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Grille des promotions */
+.promo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Carte promotionnelle */
+.promo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: space-between; /* Garde un bon espacement */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 250px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.promo-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Image des promotions */
+.promo-item img {
+    width: auto; /* Permet de garder les proportions */
+    height: 200px;
+    max-width: 100%; /* Empêche l'image de dépasser */
+    object-fit: contain; /* Assure que toute l'image est visible */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Description de la promotion */
+.promo-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 15px;
+}
+
+/* Ancien prix barré */
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Nouveau prix en valeur */
+.discounted-price {
+    font-weight: bold;
+    color: #e53935;
+    font-size: 1.2rem;
+}
+
+/* Bouton d'achat */
+.promo-item .buy-button {
+    display: inline-block;
+    background-color: #e53935;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.promo-item .buy-button:hover {
+    background-color: #c62828;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* REVIEWS */
+.reviews-swiper {
+    max-width: 600px;
+    margin: auto;
+}
+
+.review {
+    text-align: center;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* CONTACT */
+.contact-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.contact-item p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+
+/*Page produits*/
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.product-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    max-height: 100%; /* Limite la hauteur des cartes */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+    max-width: 150px; /* Taille d’image plus réduite */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-item h2 {
+    font-size: 0.95em;
+    white-space: nowrap; /* Empêche le titre d’occuper plusieurs lignes */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 0.85em;
+    color: #555;
+    max-height: 40px; /* Réduction de la hauteur du texte */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #555;
+}
+
+.product-item a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.product-item a:hover {
+    background-color: #0056b3;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*PAGE PROMOTION*/
+.promotions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.promotion-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.promotion-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.promotion-item h2 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.promotion-item p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.promotion-item strong {
+    display: inline-block;
+    background: #ff4d4d; /* Rouge pour bien montrer la promo */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 8px;
+}
+
+.promotion-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*PAGE DETAILS PRODUIT*/
+
+.product-detail {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+    /*max-width: 100%;*/
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-detail img:hover {
+    transform: scale(1.5);
+}
+
+.product-detail h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-detail p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.product-detail strong {
+    color: #222;
+}
+
+.product-detail .price {
+    font-size: 22px;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.product-detail .stock {
+    color: #5cb85c;
+    font-weight: bold;
+}
+
+.product-detail .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-detail .btn:hover {
+    background: #0056b3;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
